@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio | Tia Risna</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#faa9d1;
+    --secondary:#f79cc0;
+    --bg:#FFF5F8;
+    --card:#FFFFFF;
+    --text:#333;
+}
+
+.dark{
+    --bg:#121212;
+    --card:#1f1f1f;
+    --text:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    transition:0.3s;
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(255,255,255,0.95);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    z-index:999;
+}
+
+.dark header{
+    background:#1f1f1f;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:var(--primary);
+}
+
+nav a{
+    text-decoration:none;
+    margin:0 10px;
+    color:var(--text);
+    font-weight:500;
+}
+
+.toggle{
+    border:none;
+    background:var(--primary);
+    color:white;
+    padding:8px 15px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.hero{
+    min-height:100vh;
+    background:linear-gradient(135deg,#fa9ec4,#ffa8d3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:100px 20px;
+}
+
+.hero img{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    border:6px solid white;
+    object-fit:cover;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:55px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:20px auto;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:white;
+    color:#D63384;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    margin:10px;
+}
+
+section{
+    padding:80px 10%;
+}
+
+.section-title{
+    text-align:center;
+    color:var(--primary);
+    margin-bottom:40px;
+}
+
+.card{
+    background:var(--card);
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.timeline-item{
+    background:var(--card);
+    padding:20px;
+    border-left:5px solid var(--primary);
+    margin-bottom:20px;
+    border-radius:10px;
+}
+
+.skill{
+    margin-bottom:20px;
+}
+
+.skill-bar{
+    background:#ddd;
+    height:10px;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.skill-fill{
+    height:100%;
+    background:var(--primary);
+}
+
+.project img,
+.certificate img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.social a{
+    text-decoration:none;
+    background:var(--primary);
+    color:white;
+    padding:10px 15px;
+    border-radius:30px;
+    margin:5px;
+    display:inline-block;
+}
+
+footer{
+    text-align:center;
+    background:var(--secondary);
+    color:white;
+    padding:20px;
+}
+
+.hidden{
+    opacity:0;
+    transform:translateY(30px);
+    transition:all .8s;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+    gap:10px;
+}
+
+nav{
+    text-align:center;
+}
+
+.hero h1{
+    font-size:38px;
+}
+
+.hero img{
+    width:170px;
+    height:170px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Portfolio</div>
+
+<nav>
+<a href="#about">Tentang</a>
+<a href="#education">Pendidikan</a>
+<a href="#experience">Pengalaman</a>
+<a href="#skills">Keahlian</a>
+<a href="#projects">Proyek</a>
+<a href="#certificate">Sertifikat</a>
+<a href="#contact">Kontak</a>
+</nav>
+
+<button class="toggle" onclick="darkMode()">🌙</button>
+
+</header>
+
+<section class="hero">
+
+<div>
+
+<img src="pass foto.jpg" alt="Foto Profil">
+
+<h1>Tia Risna</h1>
+
+<p>
+Lulusan SMK dengan disiplin tinggi, teliti, dan terbiasa bekerja sesuai Standar Operasional Prosedur (SOP). Memiliki pengalaman Praktik Kerja Lapangan (PKL) di Telkom Witel Bandung dalam input dan verifikasi data pelanggan menggunakan sistem berbasis web (MyTens) secara akurat dan terstruktur. Terbiasa bekerja dengan target harian, menjaga kualitas dan konsistensi hasil kerja, serta mengikuti instruksi kerja dengan baik. Siap bekerja dalam sistem shift, lingkungan produksi, dan berorientasi pada kualitas serta produktivitas.
+
+</p>
+
+<a href="CV_TIA RISNAA.pdf" download class="btn">
+⬇ Download CV
+</a>
+
+<a href="#contact" class="btn">
+Hubungi Saya
+</a>
+
+</div>
+
+</section>
+
+<section id="about" class="hidden">
+
+<h2 class="section-title">Tentang Saya</h2>
+
+<div class="card">
+
+<p>
+Saya merupakan lulusan SMK Rekayasa Perangkat Lunak yang memiliki
+kemampuan dalam pengolahan data, administrasi, Microsoft Office,
+serta pengembangan website dasar. Saya mampu bekerja dalam tim,
+cepat belajar, disiplin, dan bertanggung jawab.
+</p>
+
+</div>
+
+</section>
+
+<section id="education" class="hidden">
+
+<h2 class="section-title">Pendidikan</h2>
+
+<div class="timeline-item">
+
+<h3>SMK Inovasi Mandiri
+    Jurusan Rekayasa Perangkat Lunak</h3>
+
+<p>2023 - 2026</p>
+
+</div>
+
+</section>
+
+<section id="experience" class="hidden">
+
+<h2 class="section-title">Pengalaman</h2>
+
+<div class="timeline-item">
+
+<h3>PKL - Telkom Witel Bandung</h3>
+
+<p>
+Membantu Account Manager dalam pengolahan data pelanggan,
+administrasi, serta dokumentasi kegiatan perusahaan.
+</p>
+
+</div>
+
+</section>
+
+<section id="skills" class="hidden">
+
+<h2 class="section-title">Keahlian</h2>
+
+<div class="card">
+
+<div class="skill">
+HTML
+<div class="skill-bar">
+<div class="skill-fill" style="width:90%"></div>
+</div>
+</div>
+
+<div class="skill">
+CSS
+<div class="skill-bar">
+<div class="skill-fill" style="width:85%"></div>
+</div>
+</div>
+
+<div class="skill">
+Microsoft Word
+<div class="skill-bar">
+<div class="skill-fill" style="width:90%"></div>
+</div>
+</div>
+
+<div class="skill">
+Input Data
+<div class="skill-bar">
+<div class="skill-fill" style="width:95%"></div>
+</div>
+</div>
+
+<div class="skill">
+    Microsoft Excel
+    <div class="skill-bar">
+    <div class="skill-fill" style="width:95%"></div>
+    </div>
+    </div>
+
+    <div class="skill">
+        Problem Solving
+        <div class="skill-bar">
+        <div class="skill-fill" style="width:100%"></div>
+        </div>
+        </div>
+
+        <div class="skill">
+            English
+            <div class="skill-bar">
+            <div class="skill-fill" style="width:85%"></div>
+            </div>
+            </div>
+
+</div>
+
+<section id="projects" class="hidden">
+
+    <h2 class="section-title">Proyek</h2>
+    
+    <div class="grid">
+    
+    <div class="card">
+    
+    <h3>🚗 Smart Parking</h3>
+    
+    <p>
+    Mengembangkan sistem parkir pintar yang dapat mendeteksi slot
+    parkir kosong menggunakan sensor dan memberikan informasi kepada pengguna.
+    </p>
+    
+    <br>
+    
+    <p><b>Teknologi:</b></p>
+    <p>ESP32 • Sensor Ultrasonik • IoT</p>
+    
+    </div>
+    
+    <div class="card">
+    
+    <h3>💡 Smart Lamp</h3>
+    
+    <p>
+    Membuat lampu otomatis yang dapat menyala dan mati berdasarkan
+    kondisi cahaya lingkungan menggunakan sensor cahaya.
+    </p>
+    
+    <br>
+    
+    <p><b>Teknologi:</b></p>
+    <p>Arduino • LDR Sensor • Embedded System</p>
+    
+    </div>
+    
+    <div class="card">
+    
+    <h3>👕 Jemuran Otomatis</h3>
+    
+    <p>
+    Merancang sistem jemuran otomatis yang dapat masuk secara otomatis
+    saat hujan menggunakan sensor hujan dan motor servo.
+    </p>
+    
+    <br>
+    
+    <p><b>Teknologi:</b></p>
+    <p>ESP32 • Rain Sensor • Servo Motor</p>
+    
+    </div>
+    
+    </div>
+    
+    </section>
+
+    <section id="certificate" class="hidden">
+
+        <h2 class="section-title">Sertifikat</h2>
+        
+        <div class="grid">
+        
+        <div class="card certificate">
+        <img src="sertifikat pelatihan online.jpg" alt="Sertifikat 1">
+        <h3>Sertifikat pelatihan online</h3> 
+        <p>Sertifikat Pelatihan Online KiDi IoT</p>
+        </div>
+        
+        <div class="card certificate">
+        <img src="sertifikat nilai pkl tertinggi.jpg" alt="Sertifikat 2">
+        <h3>Sertifikat Nilai PKL tertinggi</h3>
+        <p>Sertifikat nilai PKL Tertinggi</p>
+        </div>
+        
+        <div class="card certificate">
+        <img src="sertifikat paskibra.jpg" alt="Sertifikat 3">
+        <h3>Sertifikat Paskibraka</h3>
+        <p>Aanggota paskibraka kecamatan</p>
+        </div>
+        
+        <div class="card certificate">
+        <img src="Sertifikat lomba matematika.jpg" alt="Sertifikat 4">
+        <h3>Sertifikat Lomba rangking 1 matematika</h3>
+        <p>Lomba rangking 1 matematika.</p>
+        </div>
+        
+        </div>
+        
+        </section>
+
+<section id="contact" class="hidden">
+
+<h2 class="section-title">Kontak</h2>
+
+<div class="card contact">
+
+<p>📧 tiarisna1508@gmail.com</p>
+<p>📱 +6281214899559</p>
+<p>📍 Sumedang, Jawa Barat</p>
+
+<br>
+
+<div class="social">
+    
+    <a href="https://github.com/tiarisna1508-commits" target="_blank">
+    💻 GitHub
+    </a>
+    
+    <a href="https://www.linkedin.com/in/tia-risna-b65842388?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
+    💼 LinkedIn
+    </a>
+    
+    <a href="https://wa.me/qr/KMVSXVL5FKNQC1" target="_blank">
+    📱 WhatsApp
+    </a>
+    
+    </div>
+
+</section>
+
+<footer>
+
+© 2026 Tia Risna Portfolio
+
+</footer>
+
+<script>
+
+function darkMode(){
+document.body.classList.toggle("dark");
+}
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach((entry)=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".hidden").forEach((el)=>{
+observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
